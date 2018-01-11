@@ -1,5 +1,11 @@
 import argparse
 import time
+import sys
+
+if sys.version_info[0] != 3:
+    # FileNotFoundError does not exist in python 2
+    raise Exception('Only works with python 3')
+
 
 PARSER = argparse.ArgumentParser(description='Countdown with audible alerts')
 PARSER.add_argument('seconds', type=int)
