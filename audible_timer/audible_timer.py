@@ -25,5 +25,6 @@ def main():
         time_until_alarm = min(time_left, time_left -  time_left  // args.alert_period * args.alert_period)
         if time_left <= 0:
             print('Time is up', flush=True)
+            return
         else:
             time.sleep(max(time_until_alarm, 0.01)) # paranoia about time loop towards ends
